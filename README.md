@@ -151,7 +151,7 @@ class Ownable {
     ContentCreatorSystem ..> VestingSchedule : manages
     ContentCreatorSystem ..> ValidatorStake : manages
     ContentCreatorSystem ..> CreatorAchievements : manages
-    ```
+```
 
 # Content Creator System
 
