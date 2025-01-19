@@ -84,7 +84,6 @@ Drawing from experience at Donatuz (a content monetization platform), we identif
 
 ### Smart Contract Architecture
 
-````mermaid
 classDiagram
 class ContentCreatorSystem {
 +submitContent()
@@ -151,7 +150,6 @@ class Ownable {
     ContentCreatorSystem ..> VestingSchedule : manages
     ContentCreatorSystem ..> ValidatorStake : manages
     ContentCreatorSystem ..> CreatorAchievements : manages
-```
 
 # Content Creator System
 
@@ -272,6 +270,8 @@ Key Components:
 
    ```solidity
    function submitContent(string memory contentHash, ContentType contentType) external
+   ```
+
 ````
 
 - Creator submits content
@@ -407,3 +407,4 @@ npm version 6.x or higher
    - Pausable functionality
    - Emergency withdrawal
    - Upgradeable design
+````
