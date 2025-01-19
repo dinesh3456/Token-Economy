@@ -84,31 +84,31 @@ Drawing from experience at Donatuz (a content monetization platform), we identif
 
 ### Smart Contract Architecture
 
-````mermaid
+```mermaid
 classDiagram
-class ContentCreatorSystem {
-+submitContent()
-+validateContent()
-+recordEngagement()
-+stakeAsValidator()
-+startNewSeason()
-}
-class ERC20 {
-+transfer()
-+approve()
-+transferFrom()
-}
-class ReentrancyGuard {
-#nonReentrant
-}
-class Pausable {
-+pause()
-+unpause()
-}
-class Ownable {
-+owner()
-+transferOwnership()
-}
+    class ContentCreatorSystem {
+        +submitContent()
+        +validateContent()
+        +recordEngagement()
+        +stakeAsValidator()
+        +startNewSeason()
+    }
+    class ERC20 {
+        +transfer()
+        +approve()
+        +transferFrom()
+    }
+    class ReentrancyGuard {
+        #nonReentrant
+    }
+    class Pausable {
+        +pause()
+        +unpause()
+    }
+    class Ownable {
+        +owner()
+        +transferOwnership()
+    }
 
     ContentCreatorSystem --|> ERC20
     ContentCreatorSystem --|> ReentrancyGuard
@@ -151,97 +151,7 @@ class Ownable {
     ContentCreatorSystem ..> VestingSchedule : manages
     ContentCreatorSystem ..> ValidatorStake : manages
     ContentCreatorSystem ..> CreatorAchievements : manages
-    ```
-
-# Content Creator System
-
-A blockchain-based content monetization and reward system implemented within Supra Containers.
-
-## Table of Contents
-
-- [Problem Statement](#problem-statement)
-- [Design Choices](#design-choices)
-- [Phase-wise Development](#phase-wise-development)
-- [Architecture](#architecture)
-- [Smart Contract Working](#smart-contract-working)
-- [Setup and Deployment](#setup-and-deployment)
-
-## Problem Statement
-
-In today's digital landscape, content creators face several challenges:
-
-- Lack of transparent monetization mechanisms
-- Difficulty in verifying content quality
-- Limited engagement tracking
-- Absence of standardized reward systems
-
-The project aims to create a decentralized ecosystem that:
-
-1. Rewards quality content creation
-2. Implements fair validation mechanisms
-3. Tracks user engagement
-4. Provides transparent monetization
-
-## Design Choices
-
-### Why Content Monetization?
-
-Drawing from experience at Donatuz (a content monetization platform), we identified key pain points in traditional content platforms:
-
-- Centralized control over monetization
-- Opaque reward mechanisms
-- Limited stakeholder participation
-
-### Technical Decisions
-
-1. **Token Standard**:
-
-   - Chose ERC20 for wide compatibility
-   - Enables easy integration with existing DeFi ecosystems
-
-2. **Validation Mechanism**:
-
-   - Multi-validator approach for quality assurance
-   - Stake-based validation to ensure commitment
-   - Consensus-based content approval
-
-3. **Reward System**:
-   - Quality-based rewards
-   - Engagement multipliers
-   - Achievement system for long-term engagement
-   - Seasonal rewards for continued participation
-
-## Phase-wise Development
-
-### Phase 1: Token Foundation
-
-- Basic ERC20 implementation
-- Role management system
-- Security features
-- Emergency controls
-
-### Phase 2: Content Management
-
-- Content submission system
-- Multi-validator architecture
-- Quality scoring mechanism
-- Content lifecycle management
-
-### Phase 3: Reward Mechanics
-
-- Validator staking
-- Achievement system
-- Engagement tracking
-- Seasonal rewards
-- Vesting schedules
-
-## Architecture
-
-### Smart Contract Architecture
-
-The system is built on a modular architecture that inherits from key OpenZeppelin contracts and implements custom functionality for content management and rewards.
-
-[Architecture Diagram Above]
+```
 
 Key Components:
 
@@ -272,13 +182,11 @@ Key Components:
 
    ```solidity
    function submitContent(string memory contentHash, ContentType contentType) external
-````
+   ```
 
-````
-
-- Creator submits content
-- System generates unique contentId
-- Content enters pending state
+   - Creator submits content
+   - System generates unique contentId
+   - Content enters pending state
 
 2. **Validation Process**
 
@@ -409,4 +317,3 @@ npm version 6.x or higher
    - Pausable functionality
    - Emergency withdrawal
    - Upgradeable design
-````
