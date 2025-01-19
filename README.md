@@ -84,31 +84,30 @@ Drawing from experience at Donatuz (a content monetization platform), we identif
 
 ### Smart Contract Architecture
 
-```
 classDiagram
-    class ContentCreatorSystem {
-        +submitContent()
-        +validateContent()
-        +recordEngagement()
-        +stakeAsValidator()
-        +startNewSeason()
-    }
-    class ERC20 {
-        +transfer()
-        +approve()
-        +transferFrom()
-    }
-    class ReentrancyGuard {
-        #nonReentrant
-    }
-    class Pausable {
-        +pause()
-        +unpause()
-    }
-    class Ownable {
-        +owner()
-        +transferOwnership()
-    }
+class ContentCreatorSystem {
++submitContent()
++validateContent()
++recordEngagement()
++stakeAsValidator()
++startNewSeason()
+}
+class ERC20 {
++transfer()
++approve()
++transferFrom()
+}
+class ReentrancyGuard {
+#nonReentrant
+}
+class Pausable {
++pause()
++unpause()
+}
+class Ownable {
++owner()
++transferOwnership()
+}
 
     ContentCreatorSystem --|> ERC20
     ContentCreatorSystem --|> ReentrancyGuard
@@ -151,7 +150,6 @@ classDiagram
     ContentCreatorSystem ..> VestingSchedule : manages
     ContentCreatorSystem ..> ValidatorStake : manages
     ContentCreatorSystem ..> CreatorAchievements : manages
-```
 
 # Content Creator System
 
